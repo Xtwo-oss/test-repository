@@ -1,4 +1,5 @@
 print("hello from GitHub!")
+a = "a"
 while a != "hello":
     a = input()
     if a == "hello":
