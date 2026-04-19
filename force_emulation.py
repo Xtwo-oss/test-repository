@@ -22,4 +22,5 @@ while True:
         v += a * t
         if (tm+1)//100 == (tm+1)/100:
             print(f"velocity: {v:0<20}mps, time: {(tm+1)/100:0<5}")
+            slp(0.5)
     print("[program end]")
