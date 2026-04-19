@@ -1,21 +1,18 @@
 from time import sleep as slp
 while True:
     v = 0
-    g = float(input("enter g:")) #0 for standart
+    g = float(input("Enter the acceleration due to gravity (0 for the default value):"))
     if g == 0:
         g = 9.8
-    p = float(input("enter p:")) #0 for standart
+    p = float(input("Enter air/atmosphere density (0 for default value):"))
     if p == 0:
         p = 1.225
     cd = 1.0
-    h = float(input("enter height:")) #like 1.23 (123 cm)
-    w = float(input("enter width:")) #like 1.23 (123 cm)
-    a = int(input("is this a body?(0/1):"))
-    if a == 1:
-        S = h*w*0.8
-    elif a == 0:
-        S = h*w
-    m = float(input("enter mass:")) #like 123 (123 kg)
+    h = float(input("Enter the height (or length) of the object (the higher the slower the object):")) #like 1.23 (123 cm)
+    w = float(input("Enter the width of the object (the higher the width, the slower the object):")) #like 1.23 (123 cm)
+    a = float(input("Enter the object's streamlining (the higher the object's roundness, the rounder it is):"))
+    S = h*w*a
+    m = float(input("Enter the weight of the object (the higher the weight, the faster the object):")) #like 123 (123 kg)
     t = 0.01
     k = (p*cd*S)/(2*m)
     for tm in range(int(input("enter time:"))*100):
@@ -23,6 +20,6 @@ while True:
         if a < 0:
             a = 0
         v += a * t
-        print(f"velocity: {v:0<18}mps, time: {(tm+1)/100:0<5}")
+        print(f"velocity: {v:0<20}mps, time: {(tm+1)/100:0<5}")
         slp(0.01)
     print("[program end]")
